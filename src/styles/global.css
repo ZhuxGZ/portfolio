@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+:root {
+	display: flex;
+	background-color: #111312;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	width: calc(100% - 2rem);
+	max-width: 90dvw;
+	border-left: #313b3b 1px solid;
+	border-right: #313b3b 1px solid;
+	color: white;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 4rem;
+	font-weight: 800;
+}
+
+h2 {
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+p {
+	font-size: 1.2rem;
+	line-height: 1.6rem;
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+	font-weight: 500;
+}

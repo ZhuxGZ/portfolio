@@ -1,0 +1,72 @@
+---
+import Wrapper from './Wrapper.astro';
+import MobileNav from './MobileNav.astro';
+---
+<header>
+	
+	<Wrapper>
+		<div class="flex justify-between items-center pt-6">
+			<div class="flex justify-between items-center gap-10">
+				<h3 class="font-bold italic">Zhux</h3>
+				<nav class="hidden sm:flex gap-5">
+					<a href="/">Home</a>
+					<a href="/projects">Projects</a>
+					<a href="/blog">Blog</a>
+				</nav>
+			</div>
+				<div class="burger flex flex-col justify-center items-center cursor-pointer w-8 h-8 sm:hidden">
+					<div class="w-full h-1 bg-white mb-2 rounded-lg"></div>
+					<div class="w-full h-1 bg-white rounded-lg"></div>
+				</div>
+			<div class="hidden sm:flex gap-5">
+				<p>Linkedin</p>
+				<p>Github</p>
+			</div>
+		</div>
+	</Wrapper>
+	<div class="mobileMenu">
+		<MobileNav />
+	</div>
+</header>
+
+<style>
+  .burger.open div:nth-child(1) {
+		transform: rotate(45deg) 
+		translate(3px, 3px);
+		margin-bottom: 0;
+	}
+	.burger.open div:nth-child(2) {
+		transform: rotate(-45deg) 
+		
+	}
+	
+	.mobileMenu{
+		display: none;
+	}	
+
+	.mobileMenu.open {
+		display: block;
+	}
+</style>
+
+<script>
+	const pathname = window.location.pathname;
+	const burgerMenu = document.querySelector('.burger')
+
+	if (pathname) {
+		document.querySelectorAll('a').forEach((link) => {
+			if (link.getAttribute('href') === pathname) {
+				link.classList.add('font-black!');
+			}
+		});
+	}
+
+	burgerMenu?.addEventListener('click', () => {
+		console.log('clicked');
+		burgerMenu.classList.toggle('open');
+		document.querySelector('.mobileMenu')?.classList.toggle('open');
+		
+	});
+	
+</script>
+
