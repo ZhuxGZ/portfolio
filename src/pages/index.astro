@@ -1,23 +1,25 @@
 ---
+import About from '../components/About.astro';
 import Wrapper from '../components/Wrapper.astro';
 import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Work from '../components/Work.astro';
 ---
 
 <Layout>
-	<Wrapper className="mt-10">
-		<h1 class="mt-10 mb-6">Welcome to my Portfolio</h1>
+	<HeroSection />
+	<About />
+	<Work />
+	<Wrapper>
+		<p class="text-muted font-mono">Projects</p>
+		<h3 class="mb-6">Some of my work</h1>
 		<p class="mb-4">
 			Hello! I'm Zhux, a passionate developer specializing in building web applications. Explore my projects and blog to learn more about my work and interests.
 		</p>
 	</Wrapper>
-		<Wrapper className="mt-10">
-		<h1 class="mt-10 mb-6">Welcome to my Portfolio</h1>
-		<p class="mb-4">
-			Hello! I'm Zhux, a passionate developer specializing in building web applications. Explore my projects and blog to learn more about my work and interests.
-		</p>
-	</Wrapper>
-		<Wrapper className="mt-10">
-		<h1 class="mt-10 mb-6">Welcome to my Portfolio</h1>
+	<Wrapper>
+		<p class="text-muted font-mono">Blog</p>
+		<h3 class="mb-6">Recent Writing</h1>
 		<p class="mb-4">
 			Hello! I'm Zhux, a passionate developer specializing in building web applications. Explore my projects and blog to learn more about my work and interests.
 		</p>
