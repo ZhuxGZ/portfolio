@@ -3,6 +3,8 @@
 @theme {
 	--color-background: #111312;
 	--color-foreground: #f0f0f0;
+	--color-card: #161918;
+	--color-accent: #232726;
 	--color-border: #313b3b;
 	--color-muted: #a1b0b0;
 	--font-mono: 'JetBrains Mono', monospace;
@@ -36,7 +38,7 @@ body {
 	border-left: var(--color-border) 1px solid;
 	border-right: var(--color-border) 1px solid;
 	color: var(--color-foreground);
-	@apply mx-6 max-w-5xl 
+	@apply mx-6 max-w-lg lg:max-w-4xl
 }
 
 h1 {
@@ -55,6 +57,11 @@ h3 {
 p {
 	@apply text-muted font-normal text-sm;
 }
+
+pre {
+	@apply  bg-card border-2 border-border rounded-lg p-4 overflow-x-auto! overflow-clip font-mono text-sm; 
+}
+
 
 a {
 	text-decoration: none;
