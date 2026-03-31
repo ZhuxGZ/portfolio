@@ -17,7 +17,9 @@ const {title = 'Zhux'} = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<slot />
+		<main role="main">
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>
