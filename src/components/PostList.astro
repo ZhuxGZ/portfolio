@@ -15,11 +15,11 @@ const { posts } = Astro.props;
 				<p class="text-muted font-mono text-sm!">{post.frontmatter.date}</p>
 				<h3 class="font-bold mt-0!">{post.frontmatter.title}</h3>
 				<p>{post.frontmatter.description}</p>
-				<ul class="flex gap-2 mt-2 flex-wrap">
+				<div class="flex gap-2 mt-2 flex-wrap">
 					{post.frontmatter.tags.map((tag: string) => (
 						<Tag>{tag}</Tag>
 					))}
-				</ul>
+				</div>
 			</a>
 			{index !== posts.length - 1 && <hr class="border-muted/20" />}
 		</>
