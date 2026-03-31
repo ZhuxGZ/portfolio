@@ -3,12 +3,17 @@ import Wrapper from "./Wrapper.astro";
 import WorkCard from "./WorkCard.astro";
 ---
 
-<Wrapper>
+<Wrapper id="work">
 	<div>
 		<p class="text-muted font-mono text-base!">Work</p>
 		<h2 class="mb-6">Where I've shipped</h2>
 	</div>
-	<div>
-		<WorkCard title="Call Center Copilots" company="Telus Digital" role="AI Engineer" description="Building AI copilots for call center agents to help them with their daily tasks." date="2024 - Present" link="https://telusdigital.com" skills={["Prompt Engineering", "RAG", "Evaluation Pipelines", "CI/CD for LLMs"]} />
+	<div class="flex flex-col gap-4">
+		<WorkCard title="AI Tooling & Team Leadership" company="Telus Digital" role="AI Engineer Lead" description="Designing and implementing system architecture for LLM-powered internal tools, and leading a team of 12 prompt and AI engineers — establishing documentation, best practices, and evaluation pipelines to ensure quality and reduce regression risk in production." startDate="Jan 2026" endDate="Present" link="https://telusdigital.com" skills={["LLM Architecture", "Team Leadership", "DeepEval", "CI/CD for LLMs"]} />
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<WorkCard title="Customer Support AI Copilots" company="Telus Digital" role="Prompt Engineer" description="Built LLM-powered copilots for customer support and sales agents across 2 lines of business. Authored system prompts and guardrails using Claude Sonnet and Haiku, reducing hallucinations by ~15% and enabling agents to suggest responses, generate compliant statements, and collect structured data." startDate="Oct 2025" endDate="Dec 2025" link="https://telusdigital.com" skills={["Prompt Engineering", "Claude Sonnet/Haiku", "Guardrails"]} />
+			<WorkCard title="Luxury Travel Platform & Emergency Management App" company="GM2DEV" role="Frontend Software Developer" description="Built a luxury travel booking platform from scratch using Next.js and TypeScript. Contributed to an emergency management app for fire agencies with escalation UI and dispatcher tools. Mentored junior devs and taught Git and async JavaScript in two bootcamps." startDate="Jan 2025" endDate="Sep 2025" link="https://gm2dev.com" skills={["Next.js", "TypeScript", "React", "Tamagui","MobX", "Git", "Apollo GraphQL"]} />
+		</div>
+		<WorkCard title="Medical Aesthetics Data Warehouse" company="GM2DEV" role="Backend Software Developer" description="Designed and maintained a data warehouse ingestion pipeline for medical aesthetic clinics using Azure Functions and .NET. Built a PDF scraping pipeline for exam data extraction, and developed normalization logic for financial transactions achieving 100% data accuracy." startDate="Feb 2024" endDate="Dec 2024" link="https://gm2dev.com" skills={["Azure Functions", "C#", ".NET", "MSSQL", "PDF Scraping", "Data Normalization"]} />
 	</div>
 </Wrapper>

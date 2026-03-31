@@ -1,28 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Wrapper from "../../components/Wrapper.astro";
-import Tag from "../../components/Tag.astro";
-const posts = Object.values(import.meta.glob('./*.md', { eager: true }));
-console.log(posts[0].url)
+import PostList from "../../components/PostList.astro";
+const allPosts: any[] = Object.values(import.meta.glob('./*.md', { eager: true }));
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 ---
 
 <Layout>
-	<Wrapper>
+	<Wrapper className="min-h-[calc(100dvh-118px)]">
 		<p class="text-muted font-mono text-base!">Blog</p>
-		<h2 class="mb-6">Recent Writing</h2>
-		<div>
-			{posts.map((post) => (
-				<a href={post.url}>
-					<p class="text-muted font-mono text-sm!">{post.frontmatter.date}</p>
-					<h3>{post.frontmatter.title}</h3>
-					<p>{post.frontmatter.description}</p>
-					<ul class="flex gap-2 mt-2">
-						{post.frontmatter.tags.map((tag: string) => (
-							<Tag>{tag}</Tag>
-						))}
-					</ul>
-				</a>
-			))}
-		</div>
+		<h2 class="mt-0! mb-6">Articles</h2>
+		<PostList posts={sortedPosts} />
 	</Wrapper>
 </Layout>

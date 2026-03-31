@@ -1,13 +1,21 @@
 ---
 import Wrapper from "./Wrapper.astro";
+import EmailSvg from "./svg/EmailSvg.astro";
+import GithubSvg from "./svg/GithubSvg.astro";
+import LinkedinSvg from "./svg/LinkedinSvg.astro";
 ---
 	
 <Wrapper className="mt-10 mb-10">
 	<h1 class="mt-10 mb-6 text-balance lg:text-nowrap text-center">
 		Software Engineer
-		<span class="text-muted block lg:inline mt-3">at Telus Digital</span>
+		<span class="text-muted block mt-3">at Telus Digital</span>
 	</h1>
-	<p class="mt-10 mb-4 text-center text-balance">
+	<p class="text-base! md:text-lg! lg:text-xl! mt-10 mb-2 text-center text-balance">
 		Hello! I'm Zhux, a passionate developer specializing in building web applications. Explore my projects and blog to learn more about my work and interests.
 	</p>
+	<div class="flex justify-center items-center gap-4 mb-4">
+		<a href="https://github.com/zhuxgz" class="items-center gap-2 mt-8 border border-border hover:bg-accent rounded-lg p-3"><GithubSvg /></a>
+		<a href="https://www.linkedin.com/in/ignacio-bergantinos/" class="items-center gap-2 mt-8 border border-border hover:bg-accent rounded-lg p-3"><LinkedinSvg /></a>
+		<a href="mailto:bergantinos.ignacio@gmail.com" class="items-center gap-2 mt-8 border border-border hover:bg-accent rounded-lg p-3"><EmailSvg className="text-muted!" /></a>
+	</div>
 </Wrapper>

@@ -32,36 +32,39 @@
 	background-color: var(--color-background);
 	justify-content: center;
 	align-items: center;
+	scroll-behavior: smooth;
 }
 
 body {
 	border-left: var(--color-border) 1px solid;
 	border-right: var(--color-border) 1px solid;
 	color: var(--color-foreground);
-	@apply mx-6 max-w-lg lg:max-w-4xl
+	scrollbar-width: 1px;
+	scrollbar-color: #232726 #161918;
+	overflow-x: hidden;
+	@apply mx-6 max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl
 }
 
 h1 {
 	font-family: 'JetBrains Mono', monospace;
-	@apply text-4xl font-extrabold ;
+	@apply text-4xl md:text-5xl lg:text-6xl font-extrabold ;
 }
 
 h2 {
-	@apply text-3xl font-bold;
+	@apply text-3xl md:text-4xl lg:text-5xl font-bold;
 }
 
 h3 {
-	@apply text-base;
+	@apply text-base md:text-lg lg:text-xl font-bold;
 }
 
 p {
-	@apply text-muted font-normal text-sm;
+	@apply text-muted font-normal text-sm md:text-base;
 }
 
-pre {
-	@apply  bg-card border-2 border-border rounded-lg p-4 overflow-x-auto! overflow-clip font-mono text-sm; 
+li {
+	@apply font-normal text-sm md:text-base;
 }
-
 
 a {
 	text-decoration: none;

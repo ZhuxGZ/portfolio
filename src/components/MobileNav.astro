@@ -5,14 +5,17 @@ import Wrapper from "./Wrapper.astro";
 ---
 	<div class="w-full h-[calc(100dvh-104px)] sm:hidden">
 		<nav>
-			<Wrapper className="pb-[calc(90dvh-218px)] flex flex-col gap-4 text-xl">
+			<Wrapper className="pb-[calc(100dvh-344px)] flex flex-col gap-4 text-xl">
 				<a class="text-muted" href="/">Home</a>
-				<a class="text-muted" href="/projects">Projects</a>
-				<a class="text-muted" href="/blog">Blog</a>
+				<a class="text-muted" href="/#about">About</a>
+				<a class="text-muted" href="/#work">Work</a>
+				<a class="text-muted hidden" href="/#projects">Projects</a>
+				<a class="text-muted" href="/posts">Blog</a>
+				<a class="text-muted" href="/#contact">Contact</a>
 			</Wrapper>
 			<Wrapper className="flex justify-center items-center gap-5">
-				<LinkedinSvg class="w-8 h-8" />
-				<GithubSvg class="w-8 h-8" />	
+				<LinkedinSvg className="size-6! cursor-pointer" />
+				<GithubSvg className="size-6! cursor-pointer" />	
 			</Wrapper>
 		</nav>
 	</div>

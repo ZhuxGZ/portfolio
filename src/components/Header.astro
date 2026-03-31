@@ -12,8 +12,11 @@ import GithubSvg from './svg/GithubSvg.astro';
 				<p class="font-mono text-foreground! font-semibold! tracking-tight">zhux.dev</p>
 				<nav class="hidden sm:flex gap-5">
 					<a class="text-muted" href="/">Home</a>
-					<a class="text-muted" href="/projects">Projects</a>
-					<a class="text-muted" href="/blog">Blog</a>
+					<a class="text-muted" href="/#about">About</a>
+					<a class="text-muted" href="/#work">Work</a>
+					<a class="text-muted hidden" href="/#projects">Projects</a>
+					<a class="text-muted" href="/posts">Blog</a>
+					<a class="text-muted" href="/#contact">Contact</a>
 				</nav>
 				
 			</div>
@@ -22,8 +25,8 @@ import GithubSvg from './svg/GithubSvg.astro';
 					<div class="w-full h-1 bg-foreground rounded-lg"></div>
 				</div>
 			<div class="hidden sm:flex gap-5">
-				<LinkedinSvg class="w-6 h-6" />
-				<GithubSvg class="w-6 h-6" />
+				<LinkedinSvg className="size-6! cursor-pointer" />
+				<GithubSvg className="size-6! cursor-pointer" />
 			</div>
 		</div>
 	</Wrapper>
@@ -46,11 +49,11 @@ import GithubSvg from './svg/GithubSvg.astro';
 		
 	}
 	.mobileMenu{
-		display: none;
+		display: none !important;
 	}	
 
 	.mobileMenu.open {
-		display: block;
+		display: block !important;
 	}
 </style>
 
@@ -69,6 +72,7 @@ import GithubSvg from './svg/GithubSvg.astro';
 	burgerMenu?.addEventListener('click', () => {
 		burgerMenu.classList.toggle('open');
 		document.querySelector('.mobileMenu')?.classList.toggle('open');
+		document.body.classList.toggle('overflow-hidden');
 		
 	});
 
@@ -76,6 +80,7 @@ import GithubSvg from './svg/GithubSvg.astro';
 		if (window.innerWidth >= 640) {
 			burgerMenu?.classList.remove('open');
 			document.querySelector('.mobileMenu')?.classList.remove('open');
+			document.body.classList.remove('overflow-hidden');
 		}
 	});
 	

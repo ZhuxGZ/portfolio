@@ -1,10 +1,15 @@
 ---
 import Wrapper from "./Wrapper.astro";
+import PostList from "./PostList.astro";
+const posts: any[] = Object.values(import.meta.glob('../pages/posts/*.md', { eager: true }));
+const latestPosts = posts
+	.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
+	.slice(0, 4);
 ---
-
-<Wrapper>
-	<div>
+	
+	
+	<Wrapper id="blog">
 		<p class="text-muted font-mono text-base!">Blog</p>
-		<h2 class="mb-6">Recent Writing</h2>
-	</div>
-</Wrapper>
+		<h2 class="mt-0! mb-6">Recent Writing</h2>
+		<PostList posts={latestPosts} />
+	</Wrapper>
