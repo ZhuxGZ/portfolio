@@ -2,7 +2,7 @@
 title: "Welcome"
 date: "2026-03-30"
 description: "Since there is nothing here yet i just wanted to give everyone that could find them selves interested on what i could say a warm welcome into this experiment that is about to start"
-tags: ["blog", "start"]
+tags: ["Blog", "Start"]
 layout: ../../../layouts/PostWrapper.astro
 ---
 
