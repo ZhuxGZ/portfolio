@@ -1,7 +1,7 @@
 ---
 import Wrapper from "./Wrapper.astro";
 import PostList from "./PostList.astro";
-const posts: any[] = Object.values(import.meta.glob('../pages/posts/*.md', { eager: true }));
+const posts: any[] = Object.values(import.meta.glob('../pages/posts/content/*.md', { eager: true }));
 const latestPosts = posts
 	.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
 	.slice(0, 4);

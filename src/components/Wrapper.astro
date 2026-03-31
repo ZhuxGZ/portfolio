@@ -4,7 +4,7 @@ const {className, corners = 'bottom', borders = "bottom", id} = Astro.props;
 
 <div id={id} class={borders === 'all' ? 'border-b border-t border-border' : borders === 'top' ? 'border-t border-border' : borders === 'bottom' ? 'border-b border-border' : '' }>
 	<div class={`${borders === 'top' || borders === 'all' && corners === 'top' || corners === 'all' ? "top-corners" : ''}`}></div>
-	<div class={`p-4 ${className}`}><slot /></div>
+	<div class={`p-6 ${className}`}><slot /></div>
 	<div class={borders === 'bottom' || borders === 'all' && corners === 'bottom' || corners === 'all' ? "bottom-corners" : '' }></div>
 </div>
 

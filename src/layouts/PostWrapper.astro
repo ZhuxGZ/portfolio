@@ -2,11 +2,12 @@
 import Layout from "./Layout.astro";
 import ArrowLeftSvg from "../components/svg/ArrowLeft.astro";
 import Wrapper from "../components/Wrapper.astro";
+
 ---
 
 <Layout>
 	<Wrapper className="flex flex-col gap-4 p-6">
-		<a class="text-muted text-lg flex items-center gap-2 mt-6 mb-6" href="/posts"><ArrowLeftSvg /> Back to Blog</a>
+		<a class="text-muted text-lg flex items-center gap-2 mt-6 mb-6 cursor-pointer" href="/posts"><ArrowLeftSvg /> Back to Blog</a>
 		<article class="markdown-post">
 			<slot />
 		</article>
@@ -15,6 +16,7 @@ import Wrapper from "../components/Wrapper.astro";
 
 <style is:global>
 	.markdown-post {
+		min-height: calc(100dvh - 259px);
 		display: flex;
 		flex-direction: column;
 		row-gap: 0.5rem;
