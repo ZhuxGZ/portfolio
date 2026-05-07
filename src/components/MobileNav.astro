@@ -1,0 +1,20 @@
+---
+import LinkedinSvg from './svg/LinkedinSvg.astro';
+import GithubSvg from './svg/GithubSvg.astro';
+import Wrapper from "./Wrapper.astro";
+---
+	<div class="w-full h-[calc(100dvh-104px)] sm:hidden">
+		<nav>
+			<Wrapper className="pb-[calc(100dvh-344px)] flex flex-col gap-4 text-xl">
+				<a class="text-muted" href="/">Home</a>
+				<a class="text-muted" href="/#about">About</a>
+				<a class="text-muted" href="/#work">Work</a>
+				<a class="text-muted hidden" href="/#projects">Projects</a>
+				<a class="text-muted" href="/posts">Blog</a>
+			</Wrapper>
+			<Wrapper className="flex justify-center items-center gap-5">
+				<a target="_blank" href="https://www.linkedin.com/in/ignacio-berganti%C3%B1os/"><LinkedinSvg className="size-6! cursor-pointer" /></a>
+				<a target="_blank" href="https://github.com/zhuxgz"><GithubSvg className="size-6! cursor-pointer" /></a>	
+			</Wrapper>
+		</nav>
+	</div>

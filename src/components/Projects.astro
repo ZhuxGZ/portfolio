@@ -1,0 +1,15 @@
+---
+const {hidden} = Astro.props;
+import Wrapper from "./Wrapper.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<Wrapper id="projects" className={hidden ? "hidden" : ""}>
+	<div>
+		<p class="text-muted font-mono text-base!">Projects</p>
+		<h2 class="mb-6">Some things I've built</h2>
+	</div>
+	<div>
+		<ProjectCard title="Call Center Copilots" company="Telus Digital" role="AI Engineer" description="Building AI copilots for call center agents to help them with their daily tasks." date="2024 - Present" link="https://telusdigital.com" skills={["Prompt Engineering", "RAG", "Evaluation Pipelines", "CI/CD for LLMs"]} />
+	</div>
+</Wrapper>

@@ -1,0 +1,21 @@
+---
+import Wrapper from "./Wrapper.astro";
+import EmailSvg from "./svg/EmailSvg.astro";
+import GithubSvg from "./svg/GithubSvg.astro";
+import LinkedinSvg from "./svg/LinkedinSvg.astro";
+---
+	
+<Wrapper className="mt-10 mb-10">
+	<h1 class="mt-10 mb-6 text-balance lg:text-nowrap text-center">
+		Software Engineer
+		<span class="text-muted block mt-3">at Telus Digital</span>
+	</h1>
+	<p class="text-base! md:text-lg! lg:text-xl! mt-10 mb-2 text-center text-balance">
+		I'm Ignacio a Full-Stack Engineer with a broad curiosity and a hands-on approach. I've worked across backend, frontend, and AI, and I care about building software that actually makes a difference. Explore my work to see what I've been up to.
+	</p>
+	<div class="flex justify-center items-center gap-4 mb-4">
+		<a target="_blank" href="https://github.com/zhuxgz" class="items-center gap-2 mt-8 border border-border hover:bg-accent rounded-lg p-3"><GithubSvg /></a>
+		<a target="_blank" href="https://www.linkedin.com/in/ignacio-berganti%C3%B1os/" class="items-center gap-2 mt-8 border border-border hover:bg-accent rounded-lg p-3"><LinkedinSvg /></a>
+		<a target="_blank" href="#contact" class="items-center gap-2 mt-8 border border-border hover:bg-accent rounded-lg p-3"><EmailSvg className="text-muted!" /></a>
+	</div>
+</Wrapper>
