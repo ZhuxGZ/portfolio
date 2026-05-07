@@ -1,0 +1,87 @@
+---
+import Wrapper from './Wrapper.astro';
+import MobileNav from './MobileNav.astro';
+import LinkedinSvg from './svg/LinkedinSvg.astro';
+import GithubSvg from './svg/GithubSvg.astro';
+---
+<header>
+	
+	<Wrapper>
+		<div class="flex justify-between items-center">
+			<div class="flex justify-between items-center gap-6">
+				<p class="font-mono text-foreground! font-semibold! tracking-tight">zhux.dev</p>
+				<nav role="navigation" class="hidden sm:flex gap-5">
+					<a class="text-muted" href="/">Home</a>
+					<a class="text-muted" href="/#about">About</a>
+					<a class="text-muted" href="/#work">Work</a>
+					<a class="text-muted hidden" href="/#projects">Projects</a>
+					<a class="text-muted" href="/posts">Blog</a>
+				</nav>
+				
+			</div>
+				<div class="burger flex flex-col justify-center items-center cursor-pointer w-8 h-8 sm:hidden">
+					<div class="w-full h-1 bg-foreground mb-2 rounded-lg"></div>
+					<div class="w-full h-1 bg-foreground rounded-lg"></div>
+				</div>
+			<div class="hidden sm:flex gap-5">
+				<a target="_blank" href="https://www.linkedin.com/in/ignacio-berganti%C3%B1os/"><LinkedinSvg className="size-6! cursor-pointer" /></a>
+				<a target="_blank" href="https://github.com/zhuxgz"><GithubSvg className="size-6! cursor-pointer" /></a>
+			</div>
+		</div>
+	</Wrapper>
+	<div class="mobileMenu">
+		<MobileNav />
+	</div>
+</header>
+
+<style>
+	.header-title {
+		font-family: "JetBrains Mono", monospace;
+	}
+  .burger.open div:nth-child(1) {
+		transform: rotate(45deg) 
+		translate(3px, 3px);
+		margin-bottom: 0;
+	}
+	.burger.open div:nth-child(2) {
+		transform: rotate(-45deg) 
+		
+	}
+	.mobileMenu{
+		display: none !important;
+	}	
+
+	.mobileMenu.open {
+		display: block !important;
+	}
+</style>
+
+<script>
+	const pathname = window.location.pathname;
+	const burgerMenu = document.querySelector('.burger')
+
+	if (pathname) {
+		document.querySelectorAll('a').forEach((link) => {
+			if (link.getAttribute('href') === pathname) {
+				link.classList.add('font-bold!');
+			}
+		});
+	}
+
+	burgerMenu?.addEventListener('click', () => {
+		burgerMenu.classList.toggle('open');
+		document.querySelector('.mobileMenu')?.classList.toggle('open');
+		document.body.classList.toggle('overflow-hidden');
+		
+	});
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth >= 640) {
+			burgerMenu?.classList.remove('open');
+			document.querySelector('.mobileMenu')?.classList.remove('open');
+			document.body.classList.remove('overflow-hidden');
+		}
+	});
+	
+</script>
+

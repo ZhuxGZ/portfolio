@@ -1,1 +1,0 @@
-export { HeroProfile } from './HeroProfile';

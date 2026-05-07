@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-background: #111312;
+	--color-foreground: #f0f0f0;
+	--color-card: #161918;
+	--color-accent: #232726;
+	--color-cyanAccent: #61D4D4;
+	--color-border: #313b3b;
+	--color-muted: #a1b0b0;
+	--font-mono: 'JetBrains Mono', monospace;
+	--font-sans: 'Inter', sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/InterVariable.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	display: flex;
+	background-color: var(--color-background);
+	justify-content: center;
+	align-items: center;
+	scroll-behavior: smooth;
+}
+
+body {
+	border-left: var(--color-border) 1px solid;
+	border-right: var(--color-border) 1px solid;
+	color: var(--color-foreground);
+	scrollbar-width: 1px;
+	scrollbar-color: #232726 #161918;
+	overflow-x: hidden;
+	@apply mx-6 max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl
+}
+
+h1 {
+	font-family: 'JetBrains Mono', monospace;
+	@apply text-4xl md:text-5xl lg:text-6xl font-extrabold ;
+}
+
+h2 {
+	@apply text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+
+h3 {
+	@apply text-base md:text-lg lg:text-xl font-bold;
+}
+
+p {
+	@apply text-muted font-normal text-sm md:text-base;
+}
+
+li {
+	@apply font-normal text-sm md:text-base;
+}
+
+a {
+	text-decoration: none;
+	font-weight: 500;
+}

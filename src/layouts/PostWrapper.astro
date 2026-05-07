@@ -1,0 +1,72 @@
+---
+import Layout from "./Layout.astro";
+import ArrowLeftSvg from "../components/svg/ArrowLeft.astro";
+import Wrapper from "../components/Wrapper.astro";
+
+---
+
+<Layout>
+	<Wrapper className="flex flex-col gap-4 p-6">
+		<a class="text-muted text-lg flex items-center gap-2 mt-6 mb-6 cursor-pointer" href="/posts"><ArrowLeftSvg /> Back to Blog</a>
+		<article class="markdown-post">
+			<slot />
+		</article>
+	</Wrapper>
+</Layout>
+
+<style is:global>
+	.markdown-post {
+		min-height: calc(100dvh - 259px);
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.5rem;
+	}
+
+
+	.markdown-post h2,
+	.markdown-post h3,
+	.markdown-post h4 {
+		font-family: 'JetBrains Mono', monospace;
+		margin-top: 1.5em;
+	}
+
+	.markdown-post li {
+		margin-left: 1rem;
+		color: #a1b0b0;
+		font-size: 16px;
+	}
+
+	.markdown-post ul > li{
+		color: #a1b0b0;
+		list-style: disc;
+	}
+
+	.markdown-post ol > li{
+		margin-left: 1rem;
+		color: #a1b0b0;
+		list-style: decimal;
+	}
+
+	.markdown-post p {
+		font-size: 16px;
+	}
+
+	.markdown-post strong {
+		color: #f0f0f0;
+	}
+
+	.markdown-post code {
+		color: #f0f0f0;
+		font-family: 'JetBrains Mono', monospace;
+		margin-left: 0.25rem;
+		margin-right: 0.25rem;
+	}
+
+	.markdown-post pre {
+		padding: 0.75rem;
+		border-radius: 0.5rem;
+		scrollbar-width: thin;
+		scrollbar-color: #232726 #161918;
+		overflow-x: auto;
+	}
+</style>

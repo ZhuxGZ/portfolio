@@ -1,0 +1,36 @@
+---
+import Wrapper from "./Wrapper.astro";
+import EmailSvg from "./svg/EmailSvg.astro";
+---
+
+<Wrapper id="contact">
+	<div class="flex flex-col items-center text-center">
+		<p class="text-muted font-mono text-base!">Contact</p>
+		<h2 class="mb-6">Get in touch</h2>
+		<p class="text-muted font-mono text-base! md:text-lg!">I'm always open to new opportunities and collaborations. Feel free to reach out if you have any questions or would like to chat.</p>
+		<button class="flex items-center justify-center gap-2 mt-8 border-2 font-bold! border-border bg-card hover:bg-accent rounded-lg py-2 px-4 transition-all duration-300 min-w-[160px]"><EmailSvg /> Say hello</button>
+	</div>
+</Wrapper>
+
+<script>
+	const copyEmail = document.querySelector('#contact button');
+	const email = "bergantinos.ignacio@gmail.com";
+
+	if (copyEmail) {
+		const originalHtml = copyEmail.innerHTML;
+		let timeoutId = 0;
+
+		copyEmail.addEventListener('click', () => {
+			navigator.clipboard.writeText(email);
+			
+			copyEmail.innerHTML = originalHtml.replace('Say hello', 'Email copied!');
+			copyEmail.classList.add('text-cyanAccent!', 'border-cyanAccent!');
+			
+			clearTimeout(timeoutId);
+			timeoutId = setTimeout(() => {
+				copyEmail.classList.remove('text-cyanAccent!', 'border-cyanAccent!');
+				copyEmail.innerHTML = originalHtml;
+			}, 2000);
+		});
+	}
+</script>

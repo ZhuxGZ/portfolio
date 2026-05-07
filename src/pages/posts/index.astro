@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Wrapper from "../../components/Wrapper.astro";
+import PostList from "../../components/PostList.astro";
+const allPosts: any[] = Object.values(import.meta.glob('./content/*.md', { eager: true }));
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+---
+
+<Layout>
+	<Wrapper className="min-h-[calc(100dvh-118px)]">
+		<p class="text-muted font-mono text-base!">Blog</p>
+		<h2 class="mt-0! mb-6">Articles</h2>
+		<PostList posts={sortedPosts} />
+	</Wrapper>
+</Layout>

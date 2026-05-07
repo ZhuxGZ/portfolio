@@ -1,0 +1,75 @@
+---
+const {className, corners = 'bottom', borders = "bottom", id} = Astro.props;
+---
+
+<div id={id} class={borders === 'all' ? 'border-b border-t border-border' : borders === 'top' ? 'border-t border-border' : borders === 'bottom' ? 'border-b border-border' : '' }>
+	<div class={`${borders === 'top' || borders === 'all' && corners === 'top' || corners === 'all' ? "top-corners" : ''}`}></div>
+	<div class={`p-6 ${className}`}><slot /></div>
+	<div class={borders === 'bottom' || borders === 'all' && corners === 'bottom' || corners === 'all' ? "bottom-corners" : '' }></div>
+</div>
+
+<style>
+
+	.top-corners {
+		position: relative;
+		height: 0;
+	}
+	
+	.top-corners::after {
+		content: "";
+		border-top: 5px solid #0000;
+    border-bottom: 5px solid #0000;
+    border-right: 5px solid #0000;
+    border-left: 5px solid var(--color-border);
+		width: 0;
+    height: 0;
+    position: absolute;
+    top: -5px;
+    left: 0;
+	}
+	
+	.top-corners::before {
+		content: "";
+		border-top: 5px solid #0000;
+		border-bottom: 5px solid #0000;
+		border-right: 5px solid var(--color-border);
+		border-left: 5px solid #0000;
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: -5px;
+		right: 0;
+	}
+
+	.bottom-corners {
+		position: relative;
+		height: 0;
+	}
+
+	.bottom-corners::after {
+		content: "";
+		border-top: 5px solid #0000;
+    border-bottom: 5px solid #0000;
+    border-right: 5px solid #0000;
+    border-left: 5px solid var(--color-border);
+		width: 0;
+    height: 0;
+    position: absolute;
+    top: -5px;
+    left: 0;
+
+	}
+	
+	.bottom-corners::before {
+		content: "";
+		border-top: 5px solid #0000;
+		border-bottom: 5px solid #0000;
+		border-right: 5px solid var(--color-border);
+		border-left: 5px solid #0000;
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: -5px;
+		right: 0;
+	}
+</style>
